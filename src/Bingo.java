@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Bingo {
     public static void main(String[] args) throws Exception {
-        System.out.println("Welcome to Bingo! To start a new game of Bingo, type 'start'.");
+        System.out.println("Welcome to Bingo! To start a new game of Bingo, type 'start'. To exit the program, type 'quit'.");
         boolean start = false;
         Scanner scanner = new Scanner(System.in);
         while(!start)
@@ -52,16 +52,24 @@ public class Bingo {
                     boolean nextNumber = false;
                     while(!nextNumber)
                     {
-                        System.out.println("Type 'next' to call the next number.");
+                        System.out.println("Type 'next' to call the next number, or 'quit' to end the game.");
                         input = scanner.nextLine();
                         if(input.equalsIgnoreCase("next"))
                         {
                             nextNumber = true;
                         }
+                        else if(input.equalsIgnoreCase("quit"))
+                        {
+                            System.exit(0);
+                        }
                         else{System.out.println("Invalid command. Please try again.");}
                     }
                 }
                 System.out.println("All bingo numbers have been called.");
+            }
+            else if(input.equalsIgnoreCase("quit"))
+            {
+                System.exit(0);
             }
             else{System.out.println("Invalid command. Please try again.");}
         }
